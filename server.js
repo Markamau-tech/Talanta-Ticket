@@ -270,11 +270,16 @@ app.post('/api/mpesa/manual-confirm', (req, res) => {
 
 // Root → serve the ticket website
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'index.html'), err => {
-    if (err) res.sendFile(path.join(__dirname, 'public', 'index.html'), () => {
-      res.status(200).send('Talanta Tickets API is running. Open /index.html');
-    });
+  res.sendFile(path.join(__dirname, 'public', 'index.html'), err => {
+    if (err) {
+      console.error('Could not send index.html:', err);
+      res.status(200).send('Talanta Tickets API is running. Frontend file missing.');
+    }
   });
+});
+
+app.get('/index.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // ===================== START =====================
