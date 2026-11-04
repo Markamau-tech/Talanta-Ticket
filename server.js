@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // ===================== PAYSTACK CONFIG =====================
-const PAYSTACK_SECRET_KEY = process.env.PAYSTACK_SECRET_KEY || 'sk_live_04a434548172fc47b705199ab5297a9f77d66c0c';
+const PAYSTACK_SECRET_KEY = process.env.PAYSTACK_SECRET_KEY;
 const PAYSTACK_PUBLIC_KEY = process.env.PAYSTACK_PUBLIC_KEY || 'pk_live_2074f31df08921d850d405d300eb92c18ca91a23';
 const BASE_HOST = process.env.RENDER_EXTERNAL_URL || process.env.BASE_URL || 'https://talanta-ticket.onrender.com';
 
