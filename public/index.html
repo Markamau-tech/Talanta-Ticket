@@ -1421,10 +1421,10 @@
             </div>
             <div class="ticket-grid">
                 <!-- Category 4 -->
-                <div class="ticket-card" data-category="Category 4 EARLY BIRD" data-price="2">
+                <div class="ticket-card" data-category="Category 4" data-price="2500">
                     <div class="ticket-header">
-                        <div class="ticket-category">Category 4 EARLY BIRD</div>
-                        <div class="ticket-price">KSh 2 <span>/ ticket</span></div>
+                        <div class="ticket-category">Category 4</div>
+                        <div class="ticket-price">KSh 2,500 <span>/ ticket</span></div>
                     </div>
                     <div class="ticket-body">
                         <ul class="ticket-features">
@@ -1454,10 +1454,10 @@
                 </div>
 
                 <!-- Category 3 -->
-                <div class="ticket-card" data-category="Category 3" data-price="4">
+                <div class="ticket-card" data-category="Category 3" data-price="4500">
                     <div class="ticket-header">
                         <div class="ticket-category">Category 3</div>
-                        <div class="ticket-price">KSh 4 <span>/ ticket</span></div>
+                        <div class="ticket-price">KSh 4,500 <span>/ ticket</span></div>
                     </div>
                     <div class="ticket-body">
                         <ul class="ticket-features">
@@ -1487,10 +1487,10 @@
                 </div>
 
                 <!-- Category 2 - Featured -->
-                <div class="ticket-card featured" data-category="Category 2" data-price="5">
+                <div class="ticket-card featured" data-category="Category 2" data-price="7500">
                     <div class="ticket-header">
                         <div class="ticket-category">Category 2</div>
-                        <div class="ticket-price">KSh 5 <span>/ ticket</span></div>
+                        <div class="ticket-price">KSh 7,500 <span>/ ticket</span></div>
                     </div>
                     <div class="ticket-body">
                         <ul class="ticket-features">
@@ -1917,9 +1917,9 @@
 
         // ========== CONFIG ==========
         // Put your Render backend URL here (no trailing slash).
-        // Example: const API_BASE = 'https://talanta-tickets.onrender.com';
-        // Leave as '' for manual Paybill only (no STK Push).
+        // Paystack integration
         const API_BASE = '';
+        const PAYSTACK_PUBLIC_KEY = 'pk_live_2074f31df08921d850d405d300eb92c18ca91a23';
 
         function checkout() {
             if (cart.length === 0) {
@@ -1937,7 +1937,7 @@
                 </div>`
             ).join('');
 
-            document.getElementById('modalTitle').textContent = 'Pay with M-Pesa';
+            document.getElementById('modalTitle').textContent = 'Pay with M-Pesa / Card';
             document.getElementById('modalBody').innerHTML = `
                 <p style="color:var(--text-muted);font-size:0.95rem;margin-bottom:0.5rem;">Order Summary</p>
                 ${summaryHtml}
@@ -1946,25 +1946,133 @@
                     <span style="color:var(--gold);">KSh ${totalPrice.toLocaleString()}</span>
                 </div>
 
-                <label style="display:block;font-size:0.9rem;color:var(--text-muted);margin-bottom:0.4rem;">M-Pesa Phone Number</label>
+                <label style="display:block;font-size:0.9rem;color:var(--text-muted);margin-bottom:0.4rem;">Phone Number (M-Pesa)</label>
                 <input type="tel" id="mpesaPhone" placeholder="07XX XXX XXX"
                     style="width:100%;padding:0.9rem 1rem;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.05);color:#fff;font-size:1.15rem;margin-bottom:1rem;outline:none;"
                     maxlength="12">
 
+                <label style="display:block;font-size:0.9rem;color:var(--text-muted);margin-bottom:0.4rem;">Email (optional)</label>
+                <input type="email" id="payEmail" placeholder="you@email.com"
+                    style="width:100%;padding:0.9rem 1rem;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.05);color:#fff;font-size:1rem;margin-bottom:1.25rem;outline:none;">
+
                 <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1.25rem;">
-                    Enter the phone number that has M-Pesa. You will receive a prompt on that phone to enter your PIN.
+                    You will be redirected to a secure Paystack page to complete payment with M-Pesa or Card.
                 </p>
 
-                <button class="btn btn-gold" id="stkBtn" style="width:100%;padding:0.95rem;font-size:1.05rem;" onclick="initiateSTK(${totalPrice}, ${totalQty})">
-                    Pay KSh ${totalPrice.toLocaleString()} – Send M-Pesa Prompt
+                <button class="btn btn-gold" id="payBtn" style="width:100%;padding:0.95rem;font-size:1.05rem;" onclick="payWithPaystack(${totalPrice}, ${totalQty})">
+                    Pay KSh ${totalPrice.toLocaleString()} Now
                 </button>
 
-                <div id="stkStatus" style="margin-top:1.25rem;text-align:center;font-size:0.9rem;display:none;"></div>
+                <div id="payStatus" style="margin-top:1.25rem;text-align:center;font-size:0.9rem;display:none;"></div>
             `;
 
             closeCart();
             document.getElementById('paymentModal').classList.add('show');
-            setTimeout(() => document.getElementById('mpesaPhone')?.focus(), 300);
+        }
+
+        async function payWithPaystack(totalPrice, totalQty) {
+            const phone = (document.getElementById('mpesaPhone')?.value || '').trim();
+            const email = (document.getElementById('payEmail')?.value || '').trim();
+            const btn = document.getElementById('payBtn');
+            const statusEl = document.getElementById('payStatus');
+
+            btn.disabled = true;
+            btn.textContent = 'Processing...';
+            statusEl.style.display = 'block';
+            statusEl.innerHTML = '<span style="color:var(--gold);">Creating secure payment...</span>';
+
+            try {
+                const response = await fetch(`${API_BASE}/api/paystack/initialize`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        email: email || (phone ? phone + '@talantatickets.com' : 'customer@talantatickets.com'),
+                        amount: totalPrice,
+                        phone: phone,
+                        tickets: cart
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.success && data.authorization_url) {
+                    // Redirect to Paystack payment page
+                    window.location.href = data.authorization_url;
+                } else {
+                    statusEl.innerHTML = `<span style="color:#ff6b81;">${data.message || 'Failed to start payment'}</span>`;
+                    btn.disabled = false;
+                    btn.textContent = `Pay KSh ${totalPrice.toLocaleString()} Now`;
+                }
+            } catch (err) {
+                console.error(err);
+                statusEl.innerHTML = `<span style="color:#ff6b81;">Could not connect to payment server. Please try again.</span>`;
+                btn.disabled = false;
+                btn.textContent = `Pay KSh ${totalPrice.toLocaleString()} Now`;
+            }
+        }
+
+        // Handle return from Paystack
+        (function checkPaymentReturn() {
+            const params = new URLSearchParams(window.location.search);
+            const payment = params.get('payment');
+            const ref = params.get('ref');
+
+            if (payment === 'success' && ref) {
+                // Clear URL params
+                window.history.replaceState({}, document.title, window.location.pathname);
+
+                fetch(`${API_BASE}/api/paystack/status/${ref}`)
+                    .then(r => r.json())
+                    .then(data => {
+                        if (data.status === 'completed' && data.data) {
+                            showPaystackSuccess(data.data);
+                        } else {
+                            alert('Payment received! Your seat will be confirmed shortly.');
+                        }
+                    })
+                    .catch(() => alert('Payment successful! Reference: ' + ref));
+            } else if (payment === 'failed') {
+                window.history.replaceState({}, document.title, window.location.pathname);
+                alert('Payment was not completed. Please try again.');
+            }
+        })();
+
+        function showPaystackSuccess(paymentData) {
+            const seats = paymentData.seats || [];
+            const seatDisplay = seats.join(', ') || 'Assigned at gate';
+            const receiptRef = paymentData.receiptRef || paymentData.reference;
+
+            document.getElementById('modalTitle').textContent = 'Payment Successful ✓';
+            document.getElementById('modalBody').innerHTML = `
+                <div style="text-align:center;margin-bottom:1.25rem;">
+                    <div style="width:64px;height:64px;background:rgba(0,102,0,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:2rem;">✓</div>
+                    <p style="color:#4ade80;font-weight:600;font-size:1.1rem;">Payment received! Your seats are confirmed.</p>
+                </div>
+                <div class="receipt-box">
+                    <div class="seat-label">Your Assigned Seat Number${seats.length > 1 ? 's' : ''}</div>
+                    <div class="seat-number">${seatDisplay}</div>
+                    <div class="ref">Receipt Ref: ${receiptRef}</div>
+                </div>
+                <div style="margin-top:1.5rem;background:rgba(255,255,255,0.04);border-radius:10px;padding:1rem;font-size:0.9rem;">
+                    <div style="display:flex;justify-content:space-between;margin-bottom:0.4rem;">
+                        <span style="color:var(--text-muted);">Amount Paid</span>
+                        <span>KSh ${(paymentData.amount || 0).toLocaleString()}</span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;">
+                        <span style="color:var(--text-muted);">Match</span>
+                        <span>Bayern vs Ajax • 5 Jan 2027</span>
+                    </div>
+                </div>
+                <p style="font-size:0.85rem;color:var(--text-muted);margin:1.25rem 0 0.75rem;text-align:center;">
+                    Take a screenshot of this receipt. Present your Seat Number at the gate.
+                </p>
+                <button class="btn btn-primary" style="width:100%;padding:0.9rem;" onclick="closePaymentModal(); cart = []; updateCartUI();">
+                    Done
+                </button>
+            `;
+            document.getElementById('paymentModal').classList.add('show');
+            cart = [];
+            if (typeof updateCartUI === 'function') updateCartUI();
         }
 
         function confirmManualPayment(totalPrice, totalQty) {
