@@ -1,2318 +1,736 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tickets | Bayern Munich vs Ajax | Raila Odinga International Stadium</title>
-    <meta name="description" content="Official tickets for Bayern Munich vs Ajax Amsterdam – Historic opening match of Raila Odinga International Stadium, 5 January 2027. Talanta Sports City, Nairobi.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bayern-red: #DC052D;
-            --ajax-red: #D2122E;
-            --kenyan-red: #BB0000;
-            --kenyan-green: #006600;
-            --kenyan-black: #000000;
-            --gold: #D4AF37;
-            --dark: #0a0a0a;
-            --darker: #050505;
-            --light: #f8f8f8;
-            --gray: #1a1a1a;
-            --text-muted: #a0a0a0;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', system-ui, sans-serif;
-            background: var(--darker);
-            color: #fff;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Header */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background: rgba(5, 5, 5, 0.92);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-            transition: all 0.3s;
-        }
-
-        .header-inner {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0.85rem 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            text-decoration: none;
-            color: #fff;
-        }
-
-        .logo-icon {
-            width: 46px;
-            height: 46px;
-            background: linear-gradient(145deg, #DC052D 0%, #9B0A1F 55%, #D4AF37 100%);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            box-shadow: 0 4px 14px rgba(220, 5, 45, 0.4);
-        }
-
-        .logo-icon svg {
-            width: 28px;
-            height: 28px;
-        }
-
-        .logo-text {
-            font-family: 'Oswald', sans-serif;
-            font-weight: 700;
-            font-size: 1.2rem;
-            letter-spacing: 0.4px;
-            line-height: 1.2;
-        }
-
-        .logo-text span {
-            color: var(--gold);
-        }
-
-        .logo-sub {
-            display: block;
-            font-size: 0.62rem;
-            font-weight: 500;
-            letter-spacing: 1.4px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            margin-top: 1px;
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-        }
-
-        nav a {
-            color: #ddd;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-        }
-
-        nav a:hover {
-            color: var(--gold);
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            padding: 0.7rem 1.4rem;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-            transition: all 0.25s;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--bayern-red), #b00424);
-            color: #fff;
-            box-shadow: 0 4px 15px rgba(220, 5, 45, 0.35);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(220, 5, 45, 0.5);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 1.5px solid rgba(255,255,255,0.25);
-            color: #fff;
-        }
-
-        .btn-outline:hover {
-            border-color: var(--gold);
-            color: var(--gold);
-        }
-
-        .btn-gold {
-            background: linear-gradient(135deg, var(--gold), #b8941f);
-            color: #111;
-            font-weight: 700;
-        }
-
-        .btn-gold:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: #fff;
-            font-size: 1.5rem;
-            cursor: pointer;
-            padding: 0.25rem;
-            line-height: 1;
-        }
-
-        .mobile-nav {
-            display: none;
-            position: fixed;
-            top: 64px;
-            left: 0;
-            right: 0;
-            background: rgba(10, 10, 10, 0.98);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-            padding: 1rem 1.25rem 1.5rem;
-            z-index: 999;
-            flex-direction: column;
-            gap: 0.25rem;
-        }
-
-        .mobile-nav.open {
-            display: flex;
-        }
-
-        .mobile-nav a {
-            color: #ddd;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.05rem;
-            padding: 0.85rem 0.5rem;
-            border-radius: 8px;
-        }
-
-        .mobile-nav a:hover,
-        .mobile-nav a:active {
-            background: rgba(255,255,255,0.06);
-            color: var(--gold);
-        }
-
-        /* Hero */
-        .hero {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 7rem 1.5rem 4rem;
-            background: 
-                radial-gradient(ellipse at 20% 50%, rgba(220, 5, 45, 0.18) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 20%, rgba(212, 175, 55, 0.12) 0%, transparent 40%),
-                linear-gradient(180deg, #0a0a0a 0%, #111 100%);
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.5;
-        }
-
-        .hero-content {
-            max-width: 1280px;
-            margin: 0 auto;
-            width: 100%;
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 3rem;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .match-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(220, 5, 45, 0.15);
-            border: 1px solid rgba(220, 5, 45, 0.4);
-            color: #ff6b81;
-            padding: 0.4rem 1rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 1.25rem;
-        }
-
-        .hero h1 {
-            font-family: 'Oswald', sans-serif;
-            font-size: clamp(2.8rem, 6vw, 4.2rem);
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 0.75rem;
-            letter-spacing: -0.5px;
-        }
-
-        .hero h1 .vs {
-            color: var(--gold);
-            font-size: 0.7em;
-            display: block;
-            margin: 0.15em 0;
-        }
-
-        .hero-sub {
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            margin-bottom: 1.75rem;
-            max-width: 520px;
-        }
-
-        .event-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .meta-item {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-size: 0.95rem;
-        }
-
-        .meta-item svg {
-            width: 20px;
-            height: 20px;
-            color: var(--gold);
-            flex-shrink: 0;
-        }
-
-        .hero-cta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .countdown {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .countdown-item {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 12px;
-            padding: 0.85rem 1.1rem;
-            text-align: center;
-            min-width: 80px;
-        }
-
-        .countdown-item .num {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--gold);
-            line-height: 1;
-        }
-
-        .countdown-item .label {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-muted);
-            margin-top: 0.25rem;
-        }
-
-        .hero-visual {
-            position: relative;
-        }
-
-        .poster-card {
-            background: linear-gradient(145deg, #1a1a1a, #111);
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.08);
-            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.6);
-            position: relative;
-        }
-
-        .poster-header {
-            background: linear-gradient(90deg, var(--bayern-red), #8B0000);
-            padding: 1rem 1.5rem;
-            text-align: center;
-            font-family: 'Oswald', sans-serif;
-            font-weight: 600;
-            letter-spacing: 1px;
-            font-size: 0.95rem;
-        }
-
-        .poster-body {
-            padding: 2rem 1.5rem;
-            text-align: center;
-        }
-
-        .teams {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .team {
-            text-align: center;
-        }
-
-        .team-crest {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: #222;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 0.75rem;
-            font-size: 2rem;
-            border: 3px solid rgba(255,255,255,0.1);
-        }
-
-        .team-name {
-            font-family: 'Oswald', sans-serif;
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-
-        .vs-circle {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: var(--gold);
-            color: #111;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 0.9rem;
-        }
-
-        .match-date {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--gold);
-            margin-bottom: 0.25rem;
-        }
-
-        .match-venue {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-        }
-
-        .sale-badge {
-            display: inline-block;
-            background: rgba(212, 175, 55, 0.15);
-            border: 1px solid var(--gold);
-            color: var(--gold);
-            padding: 0.5rem 1.25rem;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        /* Sections */
-        section {
-            padding: 5rem 1.5rem;
-        }
-
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-header h2 {
-            font-family: 'Oswald', sans-serif;
-            font-size: clamp(2rem, 4vw, 2.75rem);
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-        }
-
-        .section-header p {
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto;
-            font-size: 1.05rem;
-        }
-
-        /* Tickets */
-        #tickets {
-            background: linear-gradient(180deg, #0f0f0f 0%, #0a0a0a 100%);
-        }
-
-        .ticket-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .ticket-card {
-            background: var(--gray);
-            border-radius: 16px;
-            border: 1px solid rgba(255,255,255,0.07);
-            overflow: hidden;
-            transition: all 0.3s;
-            position: relative;
-        }
-
-        .ticket-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(212, 175, 55, 0.3);
-            box-shadow: 0 20px 40px -15px rgba(0,0,0,0.5);
-        }
-
-        .ticket-card.featured {
-            border-color: var(--gold);
-            box-shadow: 0 0 0 1px var(--gold);
-        }
-
-        .ticket-card.featured::before {
-            content: 'MOST POPULAR';
-            position: absolute;
-            top: 1rem;
-            right: -2rem;
-            background: var(--gold);
-            color: #111;
-            font-size: 0.7rem;
-            font-weight: 700;
-            padding: 0.3rem 2.5rem;
-            transform: rotate(45deg);
-            letter-spacing: 0.5px;
-        }
-
-        .ticket-header {
-            padding: 1.5rem 1.5rem 1rem;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-        }
-
-        .ticket-category {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-
-        .ticket-price {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--gold);
-        }
-
-        .ticket-price span {
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--text-muted);
-        }
-
-        .ticket-body {
-            padding: 1.25rem 1.5rem;
-        }
-
-        .ticket-features {
-            list-style: none;
-            margin-bottom: 1.5rem;
-        }
-
-        .ticket-features li {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.6rem;
-            font-size: 0.9rem;
-            color: #ccc;
-            margin-bottom: 0.6rem;
-        }
-
-        .ticket-features li svg {
-            width: 18px;
-            height: 18px;
-            color: var(--kenyan-green);
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-
-        .ticket-qty {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 1rem;
-        }
-
-        .qty-control {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            background: rgba(255,255,255,0.05);
-            border-radius: 8px;
-            padding: 0.3rem;
-        }
-
-        .qty-btn {
-            width: 32px;
-            height: 32px;
-            border-radius: 6px;
-            border: none;
-            background: rgba(255,255,255,0.1);
-            color: #fff;
-            font-size: 1.1rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.2s;
-        }
-
-        .qty-btn:hover {
-            background: var(--bayern-red);
-        }
-
-        .qty-value {
-            font-weight: 600;
-            min-width: 24px;
-            text-align: center;
-        }
-
-        /* Stadium Info */
-        #stadium {
-            background: #0a0a0a;
-        }
-
-        .stadium-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .stadium-image {
-            border-radius: 16px;
-            overflow: hidden;
-            aspect-ratio: 16/10;
-            background: linear-gradient(135deg, #1a1a1a, #111);
-            border: 1px solid rgba(255,255,255,0.08);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .stadium-image-placeholder {
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .stadium-image-placeholder svg {
-            width: 80px;
-            height: 80px;
-            color: var(--gold);
-            margin-bottom: 1rem;
-            opacity: 0.7;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.25rem;
-            margin-top: 1.5rem;
-        }
-
-        .stat-box {
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.07);
-            border-radius: 12px;
-            padding: 1.25rem;
-        }
-
-        .stat-value {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--gold);
-        }
-
-        .stat-label {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-top: 0.2rem;
-        }
-
-        /* How it works */
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 2rem;
-        }
-
-        .step {
-            text-align: center;
-            padding: 1.5rem;
-        }
-
-        .step-num {
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--bayern-red), #8B0000);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin: 0 auto 1.25rem;
-        }
-
-        .step h3 {
-            font-size: 1.15rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .step p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* FAQ */
-        #faq {
-            background: #0f0f0f;
-        }
-
-        .faq-list {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
-
-        .faq-question {
-            width: 100%;
-            background: none;
-            border: none;
-            color: #fff;
-            text-align: left;
-            padding: 1.35rem 0;
-            font-size: 1.05rem;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .faq-question:hover {
-            color: var(--gold);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-
-        .faq-answer-inner {
-            padding-bottom: 1.35rem;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 300px;
-        }
-
-        .faq-item.active .faq-icon {
-            transform: rotate(45deg);
-        }
-
-        .faq-icon {
-            font-size: 1.5rem;
-            transition: transform 0.3s;
-            color: var(--gold);
-        }
-
-        /* Cart Sidebar */
-        .cart-sidebar {
-            position: fixed;
-            top: 0;
-            right: -420px;
-            width: 400px;
-            max-width: 100%;
-            height: 100vh;
-            background: #111;
-            border-left: 1px solid rgba(255,255,255,0.1);
-            z-index: 2000;
-            transition: right 0.35s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .cart-sidebar.open {
-            right: 0;
-        }
-
-        .cart-header {
-            padding: 1.25rem 1.5rem;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .cart-header h3 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.3rem;
-        }
-
-        .cart-close {
-            background: none;
-            border: none;
-            color: #fff;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        .cart-items {
-            flex: 1;
-            overflow-y: auto;
-            padding: 1.5rem;
-        }
-
-        .cart-empty {
-            text-align: center;
-            color: var(--text-muted);
-            padding: 3rem 1rem;
-        }
-
-        .cart-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-        }
-
-        .cart-item-info h4 {
-            font-size: 1rem;
-            margin-bottom: 0.2rem;
-        }
-
-        .cart-item-info p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
-        .cart-footer {
-            padding: 1.5rem;
-            border-top: 1px solid rgba(255,255,255,0.08);
-        }
-
-        .cart-total {
-            display: flex;
-            justify-content: space-between;
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 1.25rem;
-        }
-
-        .cart-total span:last-child {
-            color: var(--gold);
-        }
-
-        /* Payment Modal */
-        .modal-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.75);
-            z-index: 3000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s;
-        }
-
-        .modal-overlay.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .modal {
-            background: #111;
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 16px;
-            max-width: 440px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.7);
-        }
-
-        .modal-header {
-            padding: 1.25rem 1.5rem;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .modal-header h3 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.3rem;
-        }
-
-        .modal-close {
-            background: none;
-            border: none;
-            color: #fff;
-            font-size: 1.5rem;
-            cursor: pointer;
-            line-height: 1;
-        }
-
-        .modal-body {
-            padding: 1.5rem;
-        }
-
-        .payment-number {
-            background: linear-gradient(135deg, rgba(220,5,45,0.15), rgba(212,175,55,0.1));
-            border: 1px solid rgba(212,175,55,0.4);
-            border-radius: 12px;
-            padding: 1.25rem;
-            text-align: center;
-            margin: 1.25rem 0;
-        }
-
-        .payment-number .label {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 0.4rem;
-        }
-
-        .payment-number .number {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--gold);
-            letter-spacing: 1px;
-        }
-
-        .mpesa-steps {
-            list-style: none;
-            margin: 1.25rem 0;
-        }
-
-        .mpesa-steps li {
-            display: flex;
-            gap: 0.75rem;
-            margin-bottom: 0.85rem;
-            font-size: 0.95rem;
-            color: #ccc;
-        }
-
-        .mpesa-steps .step-n {
-            background: var(--bayern-red);
-            color: #fff;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.75rem;
-            font-weight: 700;
-            flex-shrink: 0;
-        }
-
-        .receipt-box {
-            background: rgba(0,102,0,0.12);
-            border: 1px solid rgba(0,102,0,0.4);
-            border-radius: 12px;
-            padding: 1.5rem;
-            text-align: center;
-            margin-top: 1rem;
-        }
-
-        .receipt-box .seat-label {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 0.35rem;
-        }
-
-        .receipt-box .seat-number {
-            font-family: 'Oswald', sans-serif;
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: #4ade80;
-            letter-spacing: 2px;
-        }
-
-        .receipt-box .ref {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-top: 0.75rem;
-        }
-
-        .overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.6);
-            z-index: 1500;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s;
-        }
-
-        .overlay.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* Footer */
-        footer {
-            background: #050505;
-            border-top: 1px solid rgba(255,255,255,0.06);
-            padding: 4rem 1.5rem 2rem;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr 1fr;
-            gap: 2.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .footer-brand p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-top: 1rem;
-            max-width: 280px;
-        }
-
-        .footer-col h4 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.05rem;
-            margin-bottom: 1.25rem;
-            color: #fff;
-        }
-
-        .footer-col ul {
-            list-style: none;
-        }
-
-        .footer-col li {
-            margin-bottom: 0.65rem;
-        }
-
-        .footer-col a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.2s;
-        }
-
-        .footer-col a:hover {
-            color: var(--gold);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.06);
-            padding-top: 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
-        .payment-methods {
-            display: flex;
-            gap: 0.75rem;
-            align-items: center;
-        }
-
-        .payment-badge {
-            background: rgba(255,255,255,0.08);
-            padding: 0.3rem 0.7rem;
-            border-radius: 6px;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-
-        /* Responsive */
-        @media (max-width: 900px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-sub {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .event-meta {
-                justify-content: center;
-            }
-
-            .hero-cta {
-                justify-content: center;
-            }
-
-            .countdown {
-                justify-content: center;
-            }
-
-            .stadium-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            nav {
-                display: none;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .hero {
-                padding: 5.5rem 1.25rem 3rem;
-                min-height: auto;
-            }
-
-            .ticket-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .header-inner {
-                padding: 0.7rem 1rem;
-            }
-
-            .logo-text {
-                font-size: 1.05rem;
-            }
-
-            .logo-icon {
-                width: 40px;
-                height: 40px;
-            }
-
-            .logo-icon svg {
-                width: 22px;
-                height: 22px;
-            }
-
-            .hero h1 {
-                font-size: 2.1rem;
-            }
-
-            .hero-sub {
-                font-size: 1rem;
-            }
-
-            .event-meta {
-                flex-direction: column;
-                gap: 0.75rem;
-                align-items: center;
-            }
-
-            .countdown {
-                gap: 0.6rem;
-            }
-
-            .countdown-item {
-                min-width: 64px;
-                padding: 0.7rem 0.6rem;
-            }
-
-            .countdown-item .num {
-                font-size: 1.4rem;
-            }
-
-            .hero-cta {
-                flex-direction: column;
-                width: 100%;
-            }
-
-            .hero-cta .btn {
-                width: 100%;
-            }
-
-            .section-header h2 {
-                font-size: 1.75rem;
-            }
-
-            section {
-                padding: 3.5rem 1.15rem;
-            }
-
-            .ticket-card.featured::before {
-                font-size: 0.65rem;
-                right: -2.2rem;
-                top: 0.85rem;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 1.75rem;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .cart-sidebar {
-                width: 100%;
-                right: -100%;
-            }
-
-            .modal {
-                margin: 0.5rem;
-                max-height: 92vh;
-            }
-
-            .payment-number .number {
-                font-size: 1.5rem;
-            }
-
-            .receipt-box .seat-number {
-                font-size: 1.6rem;
-                letter-spacing: 1px;
-                word-break: break-all;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                text-align: center;
-                gap: 0.75rem;
-            }
-
-            .steps {
-                gap: 1.25rem;
-            }
-        }
-
-        @media (max-width: 380px) {
-            .logo-sub {
-                display: none;
-            }
-
-            .countdown-item {
-                min-width: 56px;
-                padding: 0.6rem 0.4rem;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Cart button in header */
-        .cart-btn {
-            position: relative;
-            background: rgba(255,255,255,0.08);
-            border: none;
-            color: #fff;
-            width: 42px;
-            height: 42px;
-            border-radius: 10px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.2s;
-        }
-
-        .cart-btn:hover {
-            background: rgba(255,255,255,0.15);
-        }
-
-        .cart-count {
-            position: absolute;
-            top: -6px;
-            right: -6px;
-            background: var(--bayern-red);
-            color: #fff;
-            font-size: 0.7rem;
-            font-weight: 700;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bayern Munich vs Ajax | Raila Odinga International Stadium</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --card: #141a22;
+      --card-border: #1e2a38;
+      --gold: #f5a623;
+      --gold-dark: #d4891a;
+      --text: #ffffff;
+      --muted: #8b9bb4;
+      --green: #00c853;
+      --blue: #1e90ff;
+      --danger: #ff4d6a;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      min-height: 100vh;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* Header */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(11,15,20,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--card-border);
+      padding: 0.85rem 1.25rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo {
+      display: flex; align-items: center; gap: 0.6rem;
+      font-weight: 800; font-size: 1.05rem; letter-spacing: -0.02em;
+    }
+    .logo-icon {
+      width: 36px; height: 36px; border-radius: 10px;
+      background: linear-gradient(135deg, #c8102e, #1a1a1a);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; font-weight: 800;
+    }
+    .cart-btn {
+      position: relative; background: var(--card);
+      border: 1px solid var(--card-border);
+      width: 42px; height: 42px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 1.2rem;
+    }
+    .cart-count {
+      position: absolute; top: -6px; right: -6px;
+      background: var(--gold); color: #000;
+      font-size: 0.7rem; font-weight: 700;
+      width: 18px; height: 18px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    /* Hero Match Card */
+    .hero {
+      padding: 1.5rem 1.25rem 1rem;
+    }
+    .match-card {
+      background: linear-gradient(160deg, #1a2332 0%, #0f1520 100%);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .match-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, #c8102e, var(--gold), #c8102e);
+    }
+    .badge-main {
+      display: inline-block;
+      background: var(--gold); color: #000;
+      font-size: 0.7rem; font-weight: 700;
+      padding: 0.25rem 0.65rem; border-radius: 6px;
+      text-transform: uppercase; letter-spacing: 0.04em;
+      margin-bottom: 0.75rem;
+    }
+    .match-teams {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem; margin: 1rem 0;
+    }
+    .team {
+      flex: 1; text-align: center;
+    }
+    .team-circle {
+      width: 64px; height: 64px; border-radius: 50%;
+      border: 2px solid var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 0.5rem;
+      font-weight: 800; font-size: 1.1rem;
+      background: rgba(0,0,0,0.3);
+    }
+    .team-name { font-weight: 700; font-size: 0.95rem; }
+    .vs {
+      font-weight: 800; font-size: 1.4rem; color: var(--gold);
+      opacity: 0.9;
+    }
+    .match-meta {
+      text-align: center; color: var(--muted); font-size: 0.85rem;
+      margin-bottom: 1.25rem;
+    }
+    .countdown {
+      display: flex; justify-content: center; gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .cd-item {
+      background: rgba(0,0,0,0.35);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      min-width: 64px; padding: 0.6rem 0.4rem;
+      text-align: center;
+    }
+    .cd-num {
+      font-size: 1.4rem; font-weight: 800; color: var(--gold);
+      line-height: 1.1;
+    }
+    .cd-label {
+      font-size: 0.65rem; color: var(--muted); text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .price-pills {
+      display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .pill {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.78rem; font-weight: 600;
+    }
+    .pill span { color: var(--gold); }
+
+    /* Categories */
+    .section {
+      padding: 0.5rem 1.25rem 2rem;
+    }
+    .section-title {
+      font-size: 0.8rem; font-weight: 700; color: var(--blue);
+      text-transform: uppercase; letter-spacing: 0.08em;
+      margin-bottom: 0.35rem;
+    }
+    .section-sub {
+      color: var(--muted); font-size: 0.9rem; margin-bottom: 1.25rem;
+    }
+    .ticket-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem;
+    }
+    @media (max-width: 480px) {
+      .ticket-grid { grid-template-columns: 1fr; }
+    }
+    .ticket-card {
+      background: var(--card);
+      border: 1.5px solid var(--card-border);
+      border-radius: 16px;
+      padding: 1.15rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      position: relative;
+    }
+    .ticket-card:hover, .ticket-card.selected {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 1px var(--blue);
+    }
+    .ticket-card.selected::after {
+      content: '✓';
+      position: absolute; top: 12px; right: 12px;
+      background: var(--gold); color: #000;
+      width: 22px; height: 22px; border-radius: 50%;
+      font-size: 0.75rem; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .t-name {
+      font-weight: 700; font-size: 1.05rem; margin-bottom: 0.15rem;
+    }
+    .t-seats {
+      font-size: 0.75rem; color: var(--muted); margin-bottom: 0.5rem;
+    }
+    .t-price {
+      font-size: 1.35rem; font-weight: 800; color: var(--blue);
+      margin-bottom: 0.4rem;
+    }
+    .t-booked {
+      display: inline-block;
+      background: rgba(30,144,255,0.15);
+      color: var(--blue);
+      font-size: 0.7rem; font-weight: 700;
+      padding: 0.2rem 0.5rem; border-radius: 6px;
+      margin-bottom: 0.6rem;
+    }
+    .t-desc {
+      font-size: 0.8rem; color: var(--muted); line-height: 1.4;
+    }
+    .qty-row {
+      display: flex; align-items: center; gap: 0.6rem;
+      margin-top: 0.85rem;
+    }
+    .qty-btn {
+      width: 32px; height: 32px; border-radius: 8px;
+      border: 1px solid var(--card-border);
+      background: rgba(255,255,255,0.05);
+      color: #fff; font-size: 1.1rem; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .qty-val {
+      min-width: 24px; text-align: center; font-weight: 700;
+    }
+    .add-btn {
+      flex: 1;
+      background: var(--gold);
+      color: #000; font-weight: 700;
+      border: none; border-radius: 10px;
+      padding: 0.55rem; font-size: 0.85rem;
+      cursor: pointer;
+    }
+    .add-btn:active { transform: scale(0.97); }
+
+    /* Floating cart bar */
+    .cart-bar {
+      position: fixed; bottom: 0; left: 0; right: 0;
+      background: rgba(20,26,34,0.97);
+      border-top: 1px solid var(--card-border);
+      padding: 0.9rem 1.25rem;
+      display: none; align-items: center; justify-content: space-between;
+      z-index: 90;
+      backdrop-filter: blur(10px);
+    }
+    .cart-bar.show { display: flex; }
+    .cart-info { font-size: 0.9rem; }
+    .cart-info strong { color: var(--gold); }
+    .checkout-btn {
+      background: var(--gold); color: #000;
+      font-weight: 700; border: none;
+      padding: 0.7rem 1.4rem; border-radius: 12px;
+      font-size: 0.95rem; cursor: pointer;
+    }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.75);
+      z-index: 200;
+      display: none; align-items: flex-end; justify-content: center;
+      padding: 0;
+    }
+    .modal-overlay.show { display: flex; }
+    .modal {
+      background: var(--card);
+      border-radius: 24px 24px 0 0;
+      width: 100%; max-width: 480px;
+      max-height: 92vh; overflow-y: auto;
+      padding: 1.5rem 1.25rem 2rem;
+    }
+    .modal-header {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 1.25rem;
+    }
+    .modal-title { font-size: 1.15rem; font-weight: 700; }
+    .close-btn {
+      background: rgba(255,255,255,0.08);
+      border: none; color: #fff;
+      width: 36px; height: 36px; border-radius: 50%;
+      font-size: 1.2rem; cursor: pointer;
+    }
+    .form-label {
+      display: block; font-size: 0.85rem; color: var(--muted);
+      margin-bottom: 0.35rem;
+    }
+    .form-input {
+      width: 100%; padding: 0.85rem 1rem;
+      border-radius: 12px;
+      border: 1px solid var(--card-border);
+      background: rgba(255,255,255,0.05);
+      color: #fff; font-size: 1rem;
+      margin-bottom: 1rem; outline: none;
+    }
+    .form-input:focus { border-color: var(--gold); }
+    .pay-btn {
+      width: 100%; background: var(--gold); color: #000;
+      font-weight: 700; border: none;
+      padding: 1rem; border-radius: 14px;
+      font-size: 1.05rem; cursor: pointer;
+      margin-top: 0.5rem;
+    }
+    .pay-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+    /* Ticket Receipt Style */
+    .ticket-receipt {
+      background: #f8f6f0;
+      color: #111;
+      border-radius: 12px;
+      overflow: hidden;
+      margin: 1rem 0;
+      font-family: 'Inter', sans-serif;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+    }
+    .ticket-top {
+      background: linear-gradient(90deg, #0d3b2e, #1a5c45);
+      color: #fff;
+      padding: 0.6rem 1rem;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+    .ticket-body {
+      padding: 1.25rem 1rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+    }
+    .ticket-main h2 {
+      font-size: 1.35rem; font-weight: 800;
+      letter-spacing: -0.02em; margin-bottom: 0.75rem;
+      color: #111;
+    }
+    .ticket-vs {
+      display: flex; align-items: center; gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    .club-badge {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: #eee; display: flex; align-items: center; justify-content: center;
+      font-size: 0.65rem; font-weight: 800; text-align: center;
+      border: 2px solid #ddd;
+    }
+    .ticket-info {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0.5rem; font-size: 0.75rem;
+      color: #444; margin-bottom: 0.75rem;
+    }
+    .ticket-info strong { display: block; color: #111; font-size: 0.85rem; }
+    .ticket-side {
+      border-left: 2px dashed #ccc;
+      padding-left: 1rem;
+      text-align: center;
+      min-width: 110px;
+    }
+    .ticket-cat {
+      background: #0d3b2e; color: #fff;
+      font-size: 0.7rem; font-weight: 700;
+      padding: 0.3rem 0.5rem; border-radius: 6px;
+      margin-bottom: 0.5rem; display: inline-block;
+    }
+    .ticket-seat {
+      font-size: 1.1rem; font-weight: 800; color: #111;
+      margin: 0.4rem 0;
+    }
+    .ticket-qr {
+      width: 80px; height: 80px;
+      background: #111;
+      margin: 0.5rem auto;
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 0.6rem;
+    }
+    .ticket-bottom {
+      background: #eee;
+      padding: 0.6rem 1rem;
+      display: flex; justify-content: space-around;
+      font-size: 0.7rem; color: #555;
+      border-top: 1px solid #ddd;
+    }
+    .ticket-bottom strong { color: #111; display: block; }
+
+    .success-msg {
+      text-align: center; margin-bottom: 1rem;
+    }
+    .success-msg .check {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: rgba(0,200,83,0.15);
+      color: var(--green);
+      font-size: 1.8rem;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 0.75rem;
+    }
+
+    footer {
+      text-align: center; padding: 2rem 1rem 5rem;
+      color: var(--muted); font-size: 0.8rem;
+    }
+  </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="header-inner">
-            <a href="#" class="logo">
-                <div class="logo-icon">
-                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <ellipse cx="24" cy="30" rx="16" ry="10" stroke="white" stroke-width="2.2" fill="none"/>
-                        <path d="M8 30c0-6 7-14 16-14s16 8 16 14" stroke="white" stroke-width="2.2" fill="none"/>
-                        <circle cx="24" cy="18" r="5" fill="white"/>
-                        <path d="M21.5 17.5l1.5 1.5 3.5-3.5" stroke="#DC052D" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <div class="logo-text">TALANTA <span>SPORTS</span>
-                    <span class="logo-sub">Official Tickets</span>
-                </div>
-            </a>
-            <nav>
-                <a href="#tickets">Tickets</a>
-                <a href="#stadium">Stadium</a>
-                <a href="#how">How to Buy</a>
-                <a href="#faq">FAQ</a>
-                <a href="#tickets" class="btn btn-primary">Buy Tickets</a>
-            </nav>
-            <div style="display: flex; align-items: center; gap: 0.75rem;">
-                <button class="cart-btn" id="cartToggle" aria-label="Open cart">
-                    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
-                    <span class="cart-count" id="cartCount">0</span>
-                </button>
-                <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
-            </div>
-        </div>
-        <div class="mobile-nav" id="mobileNav">
-            <a href="#tickets" onclick="closeMobileNav()">Tickets</a>
-            <a href="#stadium" onclick="closeMobileNav()">Stadium</a>
-            <a href="#how" onclick="closeMobileNav()">How to Buy</a>
-            <a href="#faq" onclick="closeMobileNav()">FAQ</a>
-            <a href="#tickets" class="btn btn-primary" style="margin-top:0.5rem;text-align:center;" onclick="closeMobileNav()">Buy Tickets</a>
-        </div>
-    </header>
-
-    <!-- Hero -->
-    <section class="hero">
-        <div class="hero-content">
-            <div>
-                <div class="match-badge">
-                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"/></svg>
-                    HISTORIC OPENING MATCH
-                </div>
-                <h1>
-                    BAYERN MUNICH
-                    <span class="vs">VS</span>
-                    AJAX AMSTERDAM
-                </h1>
-                <p class="hero-sub">
-                    The grand opening of Raila Odinga International Stadium at Talanta Sports City. Witness European giants live in Nairobi.
-                </p>
-                <div class="event-meta">
-                    <div class="meta-item">
-                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-                        <span>5 January 2027 • Tuesday</span>
-                    </div>
-                    <div class="meta-item">
-                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                        <span>Raila Odinga Stadium, Nairobi</span>
-                    </div>
-                    <div class="meta-item">
-                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                        <span>Kick-off 20:00 EAT</span>
-                    </div>
-                </div>
-                <div class="hero-cta">
-                    <a href="#tickets" class="btn btn-primary" style="padding: 0.9rem 1.8rem; font-size: 1.05rem;">Get Tickets Now</a>
-                    <a href="#stadium" class="btn btn-outline">About the Stadium</a>
-                </div>
-                <div>
-                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.75rem;">Tickets on sale in:</p>
-                    <div class="countdown" id="countdown">
-                        <div class="countdown-item">
-                            <div class="num" id="days">--</div>
-                            <div class="label">Days</div>
-                        </div>
-                        <div class="countdown-item">
-                            <div class="num" id="hours">--</div>
-                            <div class="label">Hours</div>
-                        </div>
-                        <div class="countdown-item">
-                            <div class="num" id="mins">--</div>
-                            <div class="label">Mins</div>
-                        </div>
-                        <div class="countdown-item">
-                            <div class="num" id="secs">--</div>
-                            <div class="label">Secs</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="poster-card">
-                    <div class="poster-header">RAILA ODINGA INTERNATIONAL STADIUM</div>
-                    <div class="poster-body">
-                        <div class="teams">
-                            <div class="team">
-                                <div class="team-crest" style="background: linear-gradient(135deg, #DC052D, #8B0000);">🔴</div>
-                                <div class="team-name">BAYERN</div>
-                            </div>
-                            <div class="vs-circle">VS</div>
-                            <div class="team">
-                                <div class="team-crest" style="background: linear-gradient(135deg, #D2122E, #fff); color: #111;">⚪</div>
-                                <div class="team-name">AJAX</div>
-                            </div>
-                        </div>
-                        <div class="match-date">5 JANUARY 2027</div>
-                        <div class="match-venue">Talanta Sports City • Nairobi, Kenya</div>
-                        <div class="sale-badge">Tickets on sale from 5 November 2026</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tickets Section -->
-    <section id="tickets">
-        <div class="container">
-            <div class="section-header">
-                <h2>Select Your Tickets</h2>
-                <p>Secure your seat for the historic opening of Kenya’s new national stadium. Limited availability across all categories.</p>
-            </div>
-            <div class="ticket-grid">
-                <!-- Category 4 -->
-                <div class="ticket-card" data-category="Category 4" data-price="2">
-                    <div class="ticket-header">
-                        <div class="ticket-category">Category 4 Early Bird</div>
-                        <div class="ticket-price">KSh 2 <span>/ ticket</span></div>
-                    </div>
-                    <div class="ticket-body">
-                        <ul class="ticket-features">
-                            <li>
-                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-                                Upper tier / corner sections
-                            </li>
-                            <li>
-                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-                                Great atmosphere
-                            </li>
-                            <li>
-                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-                                Full match access
-                            </li>
-                        </ul>
-                        <div class="ticket-qty">
-                            <span style="font-size: 0.9rem; color: var(--text-muted);">Quantity</span>
-                            <div class="qty-control">
-                                <button class="qty-btn" onclick="changeQty(this, -1)">−</button>
-                                <span class="qty-value">0</span>
-                                <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
-                            </div>
-                        </div>
-                        <button class="btn btn-primary" style="width: 100%;" onclick="addToCart(this)">Add to Cart</button>
-                    </div>
-                </div>
-
-                <!-- Category 3 -->
-                <div class="ticket-card" data-category="Category 3" data-price="4">
-                    <div class="ticket-header">
-                        <div class="ticket-category">Category 3</div>
-                        <div class="ticket-price">KSh 4 <span>/ ticket</span></div>
-                    </div>
-                    <div class="ticket-body">
-                        <ul class="ticket-features">
-                            <li>
-                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-                                Lower / mid tier side stands
-                            </li>
-                            <li>
-                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-                                Excellent sightlines
-                            </li>
-                            <li>
-                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-                                Close to the action
-                            </li>
-                        </ul>
-                        <div class="ticket-qty">
-                            <span style="font-size: 0.9rem; color: var(--text-muted);">Quantity</span>
-                            <div class="qty-control">
-                                <button class="qty-btn" onclick="changeQty(this, -1)">−</button>
-                                <span class="qty-value">0</span>
-                                <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
-                            </div>
-                        </div>
-                        <button class="btn btn-primary" style="width: 100%;" onclick="addToCart(this)">Add to Cart</button>
-                    </div>
-                </div>
-
-                <!-- Category 2 - Featured -->
-                <div class="ticket-card featured" data-category="Category 2" data-price="7500">
-                    <div class="ticket-header">
-                        <div class="ticket-category">Category 2</div>
-                        <div class="ticket-price">KSh 7,500 <span>/ ticket</span></div>
-                    </div>
-                    <div class="ticket-body">
-                        <ul class="ticket-features">
-                            <li>
-                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-                                Premium side stands
-                            </li>
-                            <li>
-                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-                                Best overall views
-                            </li>
-                            <li>
-                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-                                Covered seating
-                            </li>
-                            <li>
-                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-                                Priority entry lanes
-                            </li>
-                        </ul>
-                        <div class="ticket-qty">
-                            <span style="font-size: 0.9rem; color: var(--text-muted);">Quantity</span>
-                            <div class="qty-control">
-                                <button class="qty-btn" onclick="changeQty(this, -1)">−</button>
-                                <span class="qty-value">0</span>
-                                <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
-                            </div>
-                        </div>
-                        <button class="btn btn-gold" style="width: 100%;" onclick="addToCart(this)">Add to Cart</button>
-                    </div>
-                </div>
-
-                <!-- Category 1 / VIP -->
-                <div class="ticket-card" data-category="Category 1 / VIP" data-price="15000">
-                    <div class="ticket-header">
-                        <div class="ticket-category">Category 1 / VIP</div>
-                        <div class="ticket-price">KSh 15,000 <span>/ ticket</span></div>
-                    </div>
-                    <div class="ticket-body">
-                        <ul class="ticket-features">
-                            <li>
-                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-                                Best seats in the house
-                            </li>
-                            <li>
-                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-                                VIP lounge access
-                            </li>
-                            <li>
-                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-                                Complimentary refreshments
-                            </li>
-                            <li>
-                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-                                Dedicated parking & entry
-                            </li>
-                        </ul>
-                        <div class="ticket-qty">
-                            <span style="font-size: 0.9rem; color: var(--text-muted);">Quantity</span>
-                            <div class="qty-control">
-                                <button class="qty-btn" onclick="changeQty(this, -1)">−</button>
-                                <span class="qty-value">0</span>
-                                <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
-                            </div>
-                        </div>
-                        <button class="btn btn-primary" style="width: 100%;" onclick="addToCart(this)">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-            <p style="text-align: center; margin-top: 2rem; color: var(--text-muted); font-size: 0.9rem;">
-                All prices inclusive of service fees. Maximum 6 tickets per order. Payment exclusively via <strong style="color:var(--gold);">Paybill 542542</strong> (Account: 06506348326150). Official sales start 5 November 2026 at 10:00 EAT.
-            </p>
-        </div>
-    </section>
-
-    <!-- Stadium -->
-    <section id="stadium">
-        <div class="container">
-            <div class="stadium-grid">
-                <div class="stadium-image">
-                    <div class="stadium-image-placeholder">
-                        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>
-                        <p style="color: var(--text-muted); font-size: 0.95rem;">Raila Odinga International Stadium<br>60,000 capacity • Talanta Sports City</p>
-                    </div>
-                </div>
-                <div>
-                    <h2 style="font-family: 'Oswald', sans-serif; font-size: 2.2rem; margin-bottom: 1rem;">Kenya’s New National Stadium</h2>
-                    <p style="color: var(--text-muted); margin-bottom: 1.25rem;">
-                        The Raila Odinga International Stadium at Talanta Sports City is a world-class 60,000-seat venue built for the 2027 Africa Cup of Nations. Featuring hybrid pitch, VAR, goal-line technology and 52 sky boxes, it will host its first-ever match with this historic friendly.
-                    </p>
-                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
-                        Located along Ngong Road in Nairobi, the stadium stands as a tribute to the late former Prime Minister Raila Odinga and a symbol of Kenya’s sporting ambition.
-                    </p>
-                    <div class="stats-grid">
-                        <div class="stat-box">
-                            <div class="stat-value">60,000</div>
-                            <div class="stat-label">Seating Capacity</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-value">52</div>
-                            <div class="stat-label">Sky Boxes</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-value">VAR</div>
-                            <div class="stat-label">Technology Ready</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-value">AFCON</div>
-                            <div class="stat-label">2027 Host Venue</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How to Buy -->
-    <section id="how" style="background: #0a0a0a;">
-        <div class="container">
-            <div class="section-header">
-                <h2>How to Buy Tickets</h2>
-                <p>Simple, secure and official. Only buy through this platform to guarantee authenticity.</p>
-            </div>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-num">1</div>
-                    <h3>Choose Your Category</h3>
-                    <p>Select the seating category that suits your budget and preferred view of the pitch.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num">2</div>
-                    <h3>Add to Cart</h3>
-                    <p>Set the quantity (max 6 per order) and add your tickets. Review your selection anytime.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num">3</div>
-                    <h3>Pay via M-Pesa</h3>
-                    <p>Use <strong>Paybill 542542</strong> and Account <strong>06506348326150</strong>. After payment you will receive a unique Seat Number as your official receipt.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num">4</div>
-                    <h3>Attend the Match</h3>
-                    <p>Show your QR code at the gate on 5 January 2027. Arrive early for the best experience.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq">
-        <div class="container">
-            <div class="section-header">
-                <h2>Frequently Asked Questions</h2>
-                <p>Everything you need to know about tickets and the match day experience.</p>
-            </div>
-            <div class="faq-list">
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFaq(this)">
-                        When do tickets go on sale?
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">Official ticket sales open on <strong>5 November 2026 at 10:00 EAT</strong> exclusively on this website (talantasportscity.com). Be ready — demand is expected to be extremely high.</div>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFaq(this)">
-                        What payment methods are accepted?
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">Payment is exclusively via <strong>M-Pesa Lipa na M-Pesa</strong> using <strong>Paybill 542542</strong> and Account Number <strong>06506348326150</strong>. After you complete payment, a unique Seat Number will be assigned to you as your official receipt.</div>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFaq(this)">
-                        Is there a limit on how many tickets I can buy?
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">Yes. A maximum of <strong>6 tickets per order / account</strong> applies to ensure fair access for as many fans as possible.</div>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFaq(this)">
-                        Will tickets be physical or digital?
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">All tickets are digital (e-tickets) delivered instantly to your email and available in your account. You can also collect physical tickets at designated box offices closer to the match if preferred.</div>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFaq(this)">
-                        Can I transfer or resell my tickets?
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">Official ticket transfers are available through your account up to 48 hours before kick-off. Resale on unofficial platforms is not recommended and may result in invalid tickets.</div>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFaq(this)">
-                        What time should I arrive at the stadium?
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">Gates open 3 hours before kick-off (17:00 EAT). We strongly recommend arriving early to allow time for security checks and to enjoy the pre-match atmosphere.</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="#" class="logo">
-                        <div class="logo-icon">
-                            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <ellipse cx="24" cy="30" rx="16" ry="10" stroke="white" stroke-width="2.2" fill="none"/>
-                                <path d="M8 30c0-6 7-14 16-14s16 8 16 14" stroke="white" stroke-width="2.2" fill="none"/>
-                                <circle cx="24" cy="18" r="5" fill="white"/>
-                            </svg>
-                        </div>
-                        <div class="logo-text">TALANTA <span>SPORTS</span></div>
-                    </a>
-                    <p>Official ticketing platform for Raila Odinga International Stadium and Talanta Sports City events.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Match</h4>
-                    <ul>
-                        <li><a href="#tickets">Buy Tickets</a></li>
-                        <li><a href="#stadium">Stadium Info</a></li>
-                        <li><a href="#faq">FAQs</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Support</h4>
-                    <ul>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Ticket Transfer</a></li>
-                        <li><a href="#">Accessibility</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="#">Terms of Sale</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Refund Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div>© 2026 Talanta Sports City. All rights reserved. This is a demonstration website.</div>
-                <div class="payment-methods">
-                    <span class="payment-badge">Paybill 542542</span>
-                    <span class="payment-badge">Acc: 06506348326150</span>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Cart Sidebar -->
-    <div class="overlay" id="overlay"></div>
-    <div class="cart-sidebar" id="cartSidebar">
-        <div class="cart-header">
-            <h3>Your Cart</h3>
-            <button class="cart-close" id="cartClose">×</button>
-        </div>
-        <div class="cart-items" id="cartItems">
-            <div class="cart-empty">Your cart is empty.<br>Select tickets to get started.</div>
-        </div>
-        <div class="cart-footer">
-            <div class="cart-total">
-                <span>Total</span>
-                <span id="cartTotal">KSh 0</span>
-            </div>
-            <button class="btn btn-gold" style="width: 100%; padding: 0.95rem;" onclick="checkout()">Pay with M-Pesa</button>
-        </div>
+  <header>
+    <div class="logo">
+      <div class="logo-icon">TS</div>
+      <span>TALANTA SPORTS</span>
     </div>
-
-    <!-- Payment Modal -->
-    <div class="modal-overlay" id="paymentModal">
-        <div class="modal">
-            <div class="modal-header">
-                <h3 id="modalTitle">Pay via M-Pesa</h3>
-                <button class="modal-close" onclick="closePaymentModal()">×</button>
-            </div>
-            <div class="modal-body" id="modalBody">
-                <!-- Content injected by JS -->
-            </div>
-        </div>
+    <div class="cart-btn" onclick="openCart()">
+      🛒
+      <span class="cart-count" id="cartCount" style="display:none;">0</span>
     </div>
+  </header>
 
-    <script>
-        // Countdown to ticket sales: 5 November 2026 10:00 EAT (UTC+3)
-        const saleDate = new Date('2026-11-05T07:00:00Z'); // 10:00 EAT = 07:00 UTC
+  <section class="hero">
+    <div class="match-card">
+      <span class="badge-main">Main Event</span>
+      <div style="font-size:0.75rem;color:var(--muted);margin-bottom:0.25rem;">INTERNATIONAL FRIENDLY</div>
+      <div class="match-teams">
+        <div class="team">
+          <div class="team-circle" style="border-color:#c8102e;">BM</div>
+          <div class="team-name">Bayern Munich</div>
+        </div>
+        <div class="vs">VS</div>
+        <div class="team">
+          <div class="team-circle">A</div>
+          <div class="team-name">Ajax</div>
+        </div>
+      </div>
+      <div class="match-meta">
+        Tue, 5 Jan 2027 at 19:00 · Raila Odinga International Stadium
+      </div>
+      <div class="countdown" id="countdown">
+        <div class="cd-item"><div class="cd-num" id="cdDays">--</div><div class="cd-label">Days</div></div>
+        <div class="cd-item"><div class="cd-num" id="cdHrs">--</div><div class="cd-label">Hrs</div></div>
+        <div class="cd-item"><div class="cd-num" id="cdMin">--</div><div class="cd-label">Min</div></div>
+        <div class="cd-item"><div class="cd-num" id="cdSec">--</div><div class="cd-label">Sec</div></div>
+      </div>
+      <div class="price-pills">
+        <div class="pill">Regular <span>KSh 10,000</span></div>
+        <div class="pill">Business <span>KSh 22,000</span></div>
+        <div class="pill">VIP <span>KSh 35,000</span></div>
+        <div class="pill">VVIP <span>KSh 80,000</span></div>
+      </div>
+    </div>
+  </section>
 
-        function updateCountdown() {
-            const now = new Date();
-            const diff = saleDate - now;
+  <section class="section">
+    <div class="section-title">Standard Class</div>
+    <div class="section-sub">Great value seats and shared packages</div>
 
-            if (diff <= 0) {
-                document.getElementById('days').textContent = '0';
-                document.getElementById('hours').textContent = '0';
-                document.getElementById('mins').textContent = '0';
-                document.getElementById('secs').textContent = '0';
-                return;
-            }
+    <div class="ticket-grid" id="ticketGrid">
+      <!-- cards injected by JS -->
+    </div>
+  </section>
 
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const secs = Math.floor((diff % (1000 * 60)) / 1000);
+  <div class="cart-bar" id="cartBar">
+    <div class="cart-info">
+      <span id="cartSummary">0 tickets</span><br>
+      <strong id="cartTotal">KSh 0</strong>
+    </div>
+    <button class="checkout-btn" onclick="openCheckout()">Checkout</button>
+  </div>
 
-            document.getElementById('days').textContent = days;
-            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-            document.getElementById('mins').textContent = mins.toString().padStart(2, '0');
-            document.getElementById('secs').textContent = secs.toString().padStart(2, '0');
+  <!-- Checkout Modal -->
+  <div class="modal-overlay" id="checkoutModal">
+    <div class="modal">
+      <div class="modal-header">
+        <div class="modal-title" id="modalTitle">Pay with M-Pesa / Card</div>
+        <button class="close-btn" onclick="closeModal()">×</button>
+      </div>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <footer>
+    Raila Odinga International Stadium · Talanta Sports City · Nairobi<br>
+    Official tickets · Bayern Munich vs Ajax · 5 January 2027
+  </footer>
+
+  <script>
+    const CATEGORIES = [
+      { id: 'regular', name: 'Regular', price: 10000, seats: 36000, booked: 12007, desc: 'South Stand · North Stand · Open stands, great atmosphere' },
+      { id: 'business', name: 'Business', price: 22000, seats: 4500, booked: 1500, desc: 'Business Stand · Reserved seating with better views' },
+      { id: 'vip', name: 'VIP', price: 35000, seats: 2000, booked: 427, desc: 'Premium side stands · Best overall views · Covered seating' },
+      { id: 'vvip', name: 'VVIP', price: 80000, seats: 800, booked: 220, desc: 'Best seats · VIP lounge · Complimentary refreshments' },
+      { id: 'couple', name: 'Couple Package', price: 65000, seats: 1400, booked: 398, desc: '2 seats together · East Lower · Perfect for a date' },
+      { id: 'group', name: 'Group Package', price: 200000, seats: 2500, booked: 900, desc: '10 seats together · South Lower · Friends, family or teams' }
+    ];
+
+    let cart = [];
+    const API_BASE = '';
+    const PAYSTACK_PUBLIC_KEY = 'pk_live_2074f31df08921d850d405d300eb92c18ca91a23';
+
+    // Countdown
+    function updateCountdown() {
+      const target = new Date('2027-01-05T19:00:00+03:00').getTime();
+      const now = Date.now();
+      const diff = Math.max(0, target - now);
+      const d = Math.floor(diff / 86400000);
+      const h = Math.floor((diff % 86400000) / 3600000);
+      const m = Math.floor((diff % 3600000) / 60000);
+      const s = Math.floor((diff % 60000) / 1000);
+      document.getElementById('cdDays').textContent = d;
+      document.getElementById('cdHrs').textContent = String(h).padStart(2,'0');
+      document.getElementById('cdMin').textContent = String(m).padStart(2,'0');
+      document.getElementById('cdSec').textContent = String(s).padStart(2,'0');
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // Render tickets
+    function renderTickets() {
+      const grid = document.getElementById('ticketGrid');
+      grid.innerHTML = CATEGORIES.map(c => `
+        <div class="ticket-card" id="card-${c.id}">
+          <div class="t-name">${c.name}</div>
+          <div class="t-seats">• ${c.seats.toLocaleString()} seats</div>
+          <div class="t-price">KSh ${c.price.toLocaleString()}</div>
+          <div class="t-booked">${c.booked.toLocaleString()} BOOKED</div>
+          <div class="t-desc">${c.desc}</div>
+          <div class="qty-row">
+            <button class="qty-btn" onclick="changeQty('${c.id}', -1)">−</button>
+            <span class="qty-val" id="qty-${c.id}">0</span>
+            <button class="qty-btn" onclick="changeQty('${c.id}', 1)">+</button>
+            <button class="add-btn" onclick="addToCart('${c.id}')">Add</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    const qtyMap = {};
+    CATEGORIES.forEach(c => qtyMap[c.id] = 0);
+
+    function changeQty(id, delta) {
+      qtyMap[id] = Math.max(0, Math.min(6, (qtyMap[id] || 0) + delta));
+      document.getElementById('qty-' + id).textContent = qtyMap[id];
+    }
+
+    function addToCart(id) {
+      const qty = qtyMap[id] || 0;
+      if (qty < 1) { alert('Select quantity first'); return; }
+      const cat = CATEGORIES.find(c => c.id === id);
+      const existing = cart.find(i => i.id === id);
+      if (existing) {
+        existing.qty = Math.min(6, existing.qty + qty);
+      } else {
+        cart.push({ id, name: cat.name, price: cat.price, qty });
+      }
+      qtyMap[id] = 0;
+      document.getElementById('qty-' + id).textContent = 0;
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      const totalQty = cart.reduce((s, i) => s + i.qty, 0);
+      const totalPrice = cart.reduce((s, i) => s + i.price * i.qty, 0);
+      const countEl = document.getElementById('cartCount');
+      const bar = document.getElementById('cartBar');
+      if (totalQty > 0) {
+        countEl.style.display = 'flex';
+        countEl.textContent = totalQty;
+        bar.classList.add('show');
+        document.getElementById('cartSummary').textContent = totalQty + ' ticket' + (totalQty > 1 ? 's' : '');
+        document.getElementById('cartTotal').textContent = 'KSh ' + totalPrice.toLocaleString();
+      } else {
+        countEl.style.display = 'none';
+        bar.classList.remove('show');
+      }
+    }
+
+    function openCart() {
+      if (cart.length === 0) { alert('Cart is empty'); return; }
+      openCheckout();
+    }
+
+    function openCheckout() {
+      if (cart.length === 0) return;
+      const totalPrice = cart.reduce((s, i) => s + i.price * i.qty, 0);
+      const totalQty = cart.reduce((s, i) => s + i.qty, 0);
+
+      let summary = cart.map(i => `
+        <div style="display:flex;justify-content:space-between;margin-bottom:0.4rem;font-size:0.95rem;">
+          <span>${i.name} × ${i.qty}</span>
+          <span>KSh ${(i.price * i.qty).toLocaleString()}</span>
+        </div>
+      `).join('');
+
+      document.getElementById('modalTitle').textContent = 'Pay with M-Pesa / Card';
+      document.getElementById('modalBody').innerHTML = `
+        <p style="color:var(--muted);font-size:0.9rem;margin-bottom:0.5rem;">Order Summary</p>
+        ${summary}
+        <div style="display:flex;justify-content:space-between;font-weight:700;font-size:1.15rem;margin:1rem 0 1.25rem;padding-top:0.75rem;border-top:1px solid var(--card-border);">
+          <span>Total to Pay</span>
+          <span style="color:var(--gold);">KSh ${totalPrice.toLocaleString()}</span>
+        </div>
+        <label class="form-label">Phone Number (M-Pesa)</label>
+        <input class="form-input" type="tel" id="mpesaPhone" placeholder="07XX XXX XXX" maxlength="12">
+        <label class="form-label">Email (optional)</label>
+        <input class="form-input" type="email" id="payEmail" placeholder="you@email.com">
+        <p style="font-size:0.85rem;color:var(--muted);margin-bottom:1rem;">
+          You will be redirected to a secure Paystack page to complete payment with M-Pesa or Card.
+        </p>
+        <button class="pay-btn" id="payBtn" onclick="payWithPaystack(${totalPrice})">
+          Pay KSh ${totalPrice.toLocaleString()} Now
+        </button>
+        <div id="payStatus" style="margin-top:1rem;text-align:center;font-size:0.9rem;display:none;"></div>
+      `;
+      document.getElementById('checkoutModal').classList.add('show');
+    }
+
+    function closeModal() {
+      document.getElementById('checkoutModal').classList.remove('show');
+    }
+
+    async function payWithPaystack(totalPrice) {
+      const phone = (document.getElementById('mpesaPhone')?.value || '').trim();
+      const email = (document.getElementById('payEmail')?.value || '').trim();
+      const btn = document.getElementById('payBtn');
+      const statusEl = document.getElementById('payStatus');
+
+      btn.disabled = true;
+      btn.textContent = 'Processing...';
+      statusEl.style.display = 'block';
+      statusEl.innerHTML = '<span style="color:var(--gold);">Creating secure payment...</span>';
+
+      try {
+        const response = await fetch(`${API_BASE}/api/paystack/initialize`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email: email || (phone ? phone + '@talantatickets.com' : 'customer@talantatickets.com'),
+            amount: totalPrice,
+            phone: phone,
+            tickets: cart
+          })
+        });
+        const data = await response.json();
+        if (data.success && data.authorization_url) {
+          window.location.href = data.authorization_url;
+        } else {
+          statusEl.innerHTML = `<span style="color:var(--danger);">${data.message || 'Failed to start payment'}</span>`;
+          btn.disabled = false;
+          btn.textContent = `Pay KSh ${totalPrice.toLocaleString()} Now`;
         }
+      } catch (err) {
+        statusEl.innerHTML = `<span style="color:var(--danger);">Could not connect. Please try again.</span>`;
+        btn.disabled = false;
+        btn.textContent = `Pay KSh ${totalPrice.toLocaleString()} Now`;
+      }
+    }
 
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
-
-        // Cart state
-        let cart = [];
-
-        function changeQty(btn, delta) {
-            const valueEl = btn.parentElement.querySelector('.qty-value');
-            let val = parseInt(valueEl.textContent) + delta;
-            if (val < 0) val = 0;
-            if (val > 6) val = 6;
-            valueEl.textContent = val;
-        }
-
-        function addToCart(btn) {
-            const card = btn.closest('.ticket-card');
-            const category = card.dataset.category;
-            const price = parseInt(card.dataset.price);
-            const qty = parseInt(card.querySelector('.qty-value').textContent);
-
-            if (qty === 0) {
-                alert('Please select a quantity first.');
-                return;
-            }
-
-            const existing = cart.find(item => item.category === category);
-            if (existing) {
-                existing.qty = Math.min(6, existing.qty + qty);
+    // Handle return from Paystack
+    (function checkPaymentReturn() {
+      const params = new URLSearchParams(window.location.search);
+      const payment = params.get('payment');
+      const ref = params.get('ref');
+      if (payment === 'success' && ref) {
+        window.history.replaceState({}, document.title, window.location.pathname);
+        fetch(`${API_BASE}/api/paystack/status/${ref}`)
+          .then(r => r.json())
+          .then(data => {
+            if (data.status === 'completed' && data.data) {
+              showTicketReceipt(data.data);
             } else {
-                cart.push({ category, price, qty });
+              alert('Payment received! Your seat will be confirmed shortly.');
             }
+          })
+          .catch(() => alert('Payment successful! Reference: ' + ref));
+      } else if (payment === 'failed') {
+        window.history.replaceState({}, document.title, window.location.pathname);
+        alert('Payment was not completed. Please try again.');
+      }
+    })();
 
-            // Reset qty
-            card.querySelector('.qty-value').textContent = '0';
-            updateCartUI();
-            openCart();
-        }
+    function showTicketReceipt(paymentData) {
+      const seats = paymentData.seats || ['A12-7'];
+      const seat = seats[0] || 'A12-7';
+      const parts = seat.match(/([A-Z]+)(\d+)-(\d+)/) || ['', 'B', '14', '1'];
+      const section = parts[1] || 'B';
+      const row = parts[2] || '14';
+      const seatNum = parts[3] || '1';
+      const catName = (paymentData.tickets && paymentData.tickets[0]) ? paymentData.tickets[0].name : 'Regular';
+      const receiptRef = paymentData.receiptRef || paymentData.reference || 'ROI-000000';
 
-        function updateCartUI() {
-            const container = document.getElementById('cartItems');
-            const countEl = document.getElementById('cartCount');
-            const totalEl = document.getElementById('cartTotal');
+      document.getElementById('modalTitle').textContent = 'Your Ticket';
+      document.getElementById('modalBody').innerHTML = `
+        <div class="success-msg">
+          <div class="check">✓</div>
+          <p style="color:var(--green);font-weight:600;">Payment successful! Here is your ticket.</p>
+        </div>
 
-            const totalQty = cart.reduce((sum, i) => sum + i.qty, 0);
-            const totalPrice = cart.reduce((sum, i) => sum + (i.price * i.qty), 0);
+        <div class="ticket-receipt">
+          <div class="ticket-top">
+            <span>CLUB · INTERNATIONAL FRIENDLY</span>
+            <span>RAILA ODINGA INTERNATIONAL STADIUM</span>
+          </div>
+          <div class="ticket-body">
+            <div class="ticket-main">
+              <h2>BAYERN MUNICH <span style="color:#888;font-weight:500;">vs</span> AJAX</h2>
+              <div class="ticket-vs">
+                <div class="club-badge">FC<br>BAYERN</div>
+                <span style="font-weight:800;color:#888;">VS</span>
+                <div class="club-badge">AJAX</div>
+              </div>
+              <div class="ticket-info">
+                <div><span>DATE</span><strong>5 JANUARY 2027</strong></div>
+                <div><span>KICK-OFF</span><strong>19:00 EAT</strong></div>
+                <div><span>VENUE</span><strong>Raila Odinga Stadium</strong></div>
+                <div><span>REF</span><strong>${receiptRef}</strong></div>
+              </div>
+            </div>
+            <div class="ticket-side">
+              <div class="ticket-cat">${catName.toUpperCase()}</div>
+              <div style="font-size:0.7rem;color:#666;">SEAT · SECTION · ROW</div>
+              <div class="ticket-seat">${seat}</div>
+              <div class="ticket-qr">QR CODE</div>
+              <div style="font-size:0.65rem;color:#888;">SCAN FOR ENTRY</div>
+            </div>
+          </div>
+          <div class="ticket-bottom">
+            <div>TIER: <strong>${catName}</strong></div>
+            <div>AMOUNT: <strong>KSh ${(paymentData.amount||0).toLocaleString()}</strong></div>
+            <div>MATCH DAY</div>
+          </div>
+        </div>
 
-            countEl.textContent = totalQty;
-            totalEl.textContent = 'KSh ' + totalPrice.toLocaleString();
+        <p style="font-size:0.85rem;color:var(--muted);text-align:center;margin:1rem 0;">
+          Take a screenshot of this ticket. Present it at the gate on 5 January 2027.
+        </p>
+        <button class="pay-btn" onclick="closeModal(); cart=[]; updateCartUI();">Done</button>
+      `;
+      document.getElementById('checkoutModal').classList.add('show');
+      cart = [];
+      updateCartUI();
+    }
 
-            if (cart.length === 0) {
-                container.innerHTML = '<div class="cart-empty">Your cart is empty.<br>Select tickets to get started.</div>';
-                return;
-            }
-
-            container.innerHTML = cart.map((item, idx) => `
-                <div class="cart-item">
-                    <div class="cart-item-info">
-                        <h4>${item.category}</h4>
-                        <p>${item.qty} × KSh ${item.price.toLocaleString()}</p>
-                    </div>
-                    <div style="text-align: right;">
-                        <div style="font-weight: 700; color: var(--gold);">KSh ${(item.price * item.qty).toLocaleString()}</div>
-                        <button onclick="removeFromCart(${idx})" style="background:none;border:none;color:#ff6b81;font-size:0.8rem;cursor:pointer;margin-top:0.3rem;">Remove</button>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function removeFromCart(idx) {
-            cart.splice(idx, 1);
-            updateCartUI();
-        }
-
-        function openCart() {
-            document.getElementById('cartSidebar').classList.add('open');
-            document.getElementById('overlay').classList.add('show');
-        }
-
-        function closeCart() {
-            document.getElementById('cartSidebar').classList.remove('open');
-            document.getElementById('overlay').classList.remove('show');
-        }
-
-        document.getElementById('cartToggle').addEventListener('click', openCart);
-        document.getElementById('cartClose').addEventListener('click', closeCart);
-        document.getElementById('overlay').addEventListener('click', closeCart);
-
-        // Mobile menu
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileNav = document.getElementById('mobileNav');
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileNav.classList.toggle('open');
-            mobileMenuBtn.textContent = mobileNav.classList.contains('open') ? '✕' : '☰';
-        });
-        function closeMobileNav() {
-            mobileNav.classList.remove('open');
-            mobileMenuBtn.textContent = '☰';
-        }
-
-        // ========== CONFIG ==========
-        // Put your Render backend URL here (no trailing slash).
-        // Paystack integration
-        const API_BASE = '';
-        const PAYSTACK_PUBLIC_KEY = 'pk_live_2074f31df08921d850d405d300eb92c18ca91a23';
-
-        function checkout() {
-            if (cart.length === 0) {
-                alert('Your cart is empty.');
-                return;
-            }
-
-            const totalPrice = cart.reduce((sum, i) => sum + (i.price * i.qty), 0);
-            const totalQty = cart.reduce((sum, i) => sum + i.qty, 0);
-
-            let summaryHtml = cart.map(item => 
-                `<div style="display:flex;justify-content:space-between;margin-bottom:0.4rem;font-size:0.95rem;">
-                    <span>${item.category} × ${item.qty}</span>
-                    <span>KSh ${(item.price * item.qty).toLocaleString()}</span>
-                </div>`
-            ).join('');
-
-            document.getElementById('modalTitle').textContent = 'Pay with M-Pesa / Card';
-            document.getElementById('modalBody').innerHTML = `
-                <p style="color:var(--text-muted);font-size:0.95rem;margin-bottom:0.5rem;">Order Summary</p>
-                ${summaryHtml}
-                <div style="display:flex;justify-content:space-between;font-weight:700;font-size:1.15rem;margin:1rem 0 1.25rem;padding-top:0.75rem;border-top:1px solid rgba(255,255,255,0.1);">
-                    <span>Total to Pay</span>
-                    <span style="color:var(--gold);">KSh ${totalPrice.toLocaleString()}</span>
-                </div>
-
-                <label style="display:block;font-size:0.9rem;color:var(--text-muted);margin-bottom:0.4rem;">Phone Number (M-Pesa)</label>
-                <input type="tel" id="mpesaPhone" placeholder="07XX XXX XXX"
-                    style="width:100%;padding:0.9rem 1rem;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.05);color:#fff;font-size:1.15rem;margin-bottom:1rem;outline:none;"
-                    maxlength="12">
-
-                <label style="display:block;font-size:0.9rem;color:var(--text-muted);margin-bottom:0.4rem;">Email (optional)</label>
-                <input type="email" id="payEmail" placeholder="you@email.com"
-                    style="width:100%;padding:0.9rem 1rem;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.05);color:#fff;font-size:1rem;margin-bottom:1.25rem;outline:none;">
-
-                <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1.25rem;">
-                    You will be redirected to a secure Paystack page to complete payment with M-Pesa or Card.
-                </p>
-
-                <button class="btn btn-gold" id="payBtn" style="width:100%;padding:0.95rem;font-size:1.05rem;" onclick="payWithPaystack(${totalPrice}, ${totalQty})">
-                    Pay KSh ${totalPrice.toLocaleString()} Now
-                </button>
-
-                <div id="payStatus" style="margin-top:1.25rem;text-align:center;font-size:0.9rem;display:none;"></div>
-            `;
-
-            closeCart();
-            document.getElementById('paymentModal').classList.add('show');
-        }
-
-        async function payWithPaystack(totalPrice, totalQty) {
-            const phone = (document.getElementById('mpesaPhone')?.value || '').trim();
-            const email = (document.getElementById('payEmail')?.value || '').trim();
-            const btn = document.getElementById('payBtn');
-            const statusEl = document.getElementById('payStatus');
-
-            btn.disabled = true;
-            btn.textContent = 'Processing...';
-            statusEl.style.display = 'block';
-            statusEl.innerHTML = '<span style="color:var(--gold);">Creating secure payment...</span>';
-
-            try {
-                const response = await fetch(`${API_BASE}/api/paystack/initialize`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        email: email || (phone ? phone + '@talantatickets.com' : 'customer@talantatickets.com'),
-                        amount: totalPrice,
-                        phone: phone,
-                        tickets: cart
-                    })
-                });
-
-                const data = await response.json();
-
-                if (data.success && data.authorization_url) {
-                    // Redirect to Paystack payment page
-                    window.location.href = data.authorization_url;
-                } else {
-                    statusEl.innerHTML = `<span style="color:#ff6b81;">${data.message || 'Failed to start payment'}</span>`;
-                    btn.disabled = false;
-                    btn.textContent = `Pay KSh ${totalPrice.toLocaleString()} Now`;
-                }
-            } catch (err) {
-                console.error(err);
-                statusEl.innerHTML = `<span style="color:#ff6b81;">Could not connect to payment server. Please try again.</span>`;
-                btn.disabled = false;
-                btn.textContent = `Pay KSh ${totalPrice.toLocaleString()} Now`;
-            }
-        }
-
-        // Handle return from Paystack
-        (function checkPaymentReturn() {
-            const params = new URLSearchParams(window.location.search);
-            const payment = params.get('payment');
-            const ref = params.get('ref');
-
-            if (payment === 'success' && ref) {
-                // Clear URL params
-                window.history.replaceState({}, document.title, window.location.pathname);
-
-                fetch(`${API_BASE}/api/paystack/status/${ref}`)
-                    .then(r => r.json())
-                    .then(data => {
-                        if (data.status === 'completed' && data.data) {
-                            showPaystackSuccess(data.data);
-                        } else {
-                            alert('Payment received! Your seat will be confirmed shortly.');
-                        }
-                    })
-                    .catch(() => alert('Payment successful! Reference: ' + ref));
-            } else if (payment === 'failed') {
-                window.history.replaceState({}, document.title, window.location.pathname);
-                alert('Payment was not completed. Please try again.');
-            }
-        })();
-
-        function showPaystackSuccess(paymentData) {
-            const seats = paymentData.seats || [];
-            const seatDisplay = seats.join(', ') || 'Assigned at gate';
-            const receiptRef = paymentData.receiptRef || paymentData.reference;
-
-            document.getElementById('modalTitle').textContent = 'Payment Successful ✓';
-            document.getElementById('modalBody').innerHTML = `
-                <div style="text-align:center;margin-bottom:1.25rem;">
-                    <div style="width:64px;height:64px;background:rgba(0,102,0,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:2rem;">✓</div>
-                    <p style="color:#4ade80;font-weight:600;font-size:1.1rem;">Payment received! Your seats are confirmed.</p>
-                </div>
-                <div class="receipt-box">
-                    <div class="seat-label">Your Assigned Seat Number${seats.length > 1 ? 's' : ''}</div>
-                    <div class="seat-number">${seatDisplay}</div>
-                    <div class="ref">Receipt Ref: ${receiptRef}</div>
-                </div>
-                <div style="margin-top:1.5rem;background:rgba(255,255,255,0.04);border-radius:10px;padding:1rem;font-size:0.9rem;">
-                    <div style="display:flex;justify-content:space-between;margin-bottom:0.4rem;">
-                        <span style="color:var(--text-muted);">Amount Paid</span>
-                        <span>KSh ${(paymentData.amount || 0).toLocaleString()}</span>
-                    </div>
-                    <div style="display:flex;justify-content:space-between;">
-                        <span style="color:var(--text-muted);">Match</span>
-                        <span>Bayern vs Ajax • 5 Jan 2027</span>
-                    </div>
-                </div>
-                <p style="font-size:0.85rem;color:var(--text-muted);margin:1.25rem 0 0.75rem;text-align:center;">
-                    Take a screenshot of this receipt. Present your Seat Number at the gate.
-                </p>
-                <button class="btn btn-primary" style="width:100%;padding:0.9rem;" onclick="closePaymentModal(); cart = []; updateCartUI();">
-                    Done
-                </button>
-            `;
-            document.getElementById('paymentModal').classList.add('show');
-            cart = [];
-            if (typeof updateCartUI === 'function') updateCartUI();
-        }
-
-        function confirmManualPayment(totalPrice, totalQty) {
-            const seatLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K'];
-            const seats = [];
-            cart.forEach(item => {
-                for (let i = 0; i < item.qty; i++) {
-                    const block = seatLetters[Math.floor(Math.random() * seatLetters.length)];
-                    const row = Math.floor(Math.random() * 28) + 1;
-                    const seat = Math.floor(Math.random() * 22) + 1;
-                    seats.push(`${block}${row}-${seat}`);
-                }
-            });
-
-            const receiptRef = 'ROI-' + Date.now().toString().slice(-8) + '-' + Math.floor(Math.random()*900+100);
-            const seatDisplay = seats.join(', ');
-
-            document.getElementById('modalTitle').textContent = 'Payment Confirmed ✓';
-            document.getElementById('modalBody').innerHTML = `
-                <div style="text-align:center;margin-bottom:1.25rem;">
-                    <div style="width:64px;height:64px;background:rgba(0,102,0,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:2rem;">✓</div>
-                    <p style="color:#4ade80;font-weight:600;font-size:1.1rem;">Thank you! Your seats have been assigned.</p>
-                </div>
-
-                <div class="receipt-box">
-                    <div class="seat-label">Your Assigned Seat Number${seats.length > 1 ? 's' : ''}</div>
-                    <div class="seat-number">${seatDisplay}</div>
-                    <div class="ref">Receipt Ref: ${receiptRef}</div>
-                </div>
-
-                <div style="margin-top:1.5rem;background:rgba(255,255,255,0.04);border-radius:10px;padding:1rem;font-size:0.9rem;">
-                    <div style="display:flex;justify-content:space-between;margin-bottom:0.4rem;">
-                        <span style="color:var(--text-muted);">Amount Paid</span>
-                        <span>KSh ${totalPrice.toLocaleString()}</span>
-                    </div>
-                    <div style="display:flex;justify-content:space-between;margin-bottom:0.4rem;">
-                        <span style="color:var(--text-muted);">Tickets</span>
-                        <span>${totalQty}</span>
-                    </div>
-                    <div style="display:flex;justify-content:space-between;margin-bottom:0.4rem;">
-                        <span style="color:var(--text-muted);">Paybill</span>
-                        <span>542542</span>
-                    </div>
-                    <div style="display:flex;justify-content:space-between;margin-bottom:0.4rem;">
-                        <span style="color:var(--text-muted);">Account</span>
-                        <span>06506348326150</span>
-                    </div>
-                    <div style="display:flex;justify-content:space-between;">
-                        <span style="color:var(--text-muted);">Match</span>
-                        <span>Bayern vs Ajax • 5 Jan 2027</span>
-                    </div>
-                </div>
-
-                <p style="font-size:0.85rem;color:var(--text-muted);margin:1.25rem 0 0.75rem;text-align:center;">
-                    Please take a screenshot of this receipt. Present your Seat Number at the gate on match day.
-                </p>
-
-                <button class="btn btn-primary" style="width:100%;padding:0.9rem;" onclick="closePaymentModal(); cart = []; updateCartUI();">
-                    Done
-                </button>
-            `;
-        }
-
-        async function initiateSTK(totalPrice, totalQty) {
-            const phoneInput = document.getElementById('mpesaPhone');
-            const phone = phoneInput.value.trim();
-            const btn = document.getElementById('stkBtn');
-            const statusEl = document.getElementById('stkStatus');
-
-            if (!phone || phone.length < 9) {
-                alert('Please enter a valid M-Pesa phone number (e.g. 0712345678)');
-                return;
-            }
-
-            btn.disabled = true;
-            btn.textContent = 'Sending prompt...';
-            statusEl.style.display = 'block';
-            statusEl.innerHTML = '<span style="color:var(--gold);">Sending M-Pesa prompt to your phone...</span>';
-
-            try {
-                const response = await fetch(`${API_BASE}/api/mpesa/stkpush`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        phone: phone,
-                        amount: totalPrice,
-                        tickets: cart
-                    })
-                });
-
-                const data = await response.json();
-
-                if (data.success) {
-                    statusEl.innerHTML = `
-                        <div style="color:#4ade80;margin-bottom:0.5rem;">✓ Prompt sent! Check your phone and enter your M-Pesa PIN.</div>
-                        <div style="color:var(--text-muted);font-size:0.85rem;">Waiting for payment confirmation...</div>
-                        <div class="loader" style="margin:1rem auto;width:32px;height:32px;border:3px solid rgba(255,255,255,0.1);border-top-color:var(--gold);border-radius:50%;animation:spin 0.8s linear infinite;"></div>
-                    `;
-                    btn.style.display = 'none';
-
-                    // Poll for payment status
-                    pollPaymentStatus(data.checkoutRequestID, totalPrice, totalQty);
-                } else {
-                    statusEl.innerHTML = `<span style="color:#ff6b81;">${data.message || 'Failed to send prompt. Try again.'}</span>`;
-                    btn.disabled = false;
-                    btn.textContent = `Pay KSh ${totalPrice.toLocaleString()} with M-Pesa`;
-                }
-            } catch (err) {
-                console.error(err);
-                statusEl.innerHTML = `
-                    <div style="color:#ff6b81;margin-bottom:0.75rem;">Could not connect to payment server.<br><small>Backend must be running at ${API_BASE}</small></div>
-                    <button class="btn btn-outline" style="width:100%;" onclick="showManualPaybill(${totalPrice}, ${totalQty})">Use Manual Paybill Instead</button>
-                `;
-                btn.disabled = false;
-                btn.textContent = `Pay KSh ${totalPrice.toLocaleString()} – Send M-Pesa Prompt`;
-            }
-        }
-
-        function showManualPaybill(totalPrice, totalQty) {
-            document.getElementById('modalBody').innerHTML = `
-                <div class="payment-number">
-                    <div class="label">Lipa na M-Pesa → Paybill</div>
-                    <div class="number">542542</div>
-                    <div style="margin-top:0.5rem;color:#fff;">Account: <strong style="color:var(--gold);">06506348326150</strong></div>
-                </div>
-                <ul class="mpesa-steps">
-                    <li><span class="step-n">1</span> M-Pesa → Lipa na M-Pesa → Paybill</li>
-                    <li><span class="step-n">2</span> Business No: <strong>542542</strong></li>
-                    <li><span class="step-n">3</span> Account: <strong>06506348326150</strong></li>
-                    <li><span class="step-n">4</span> Amount: <strong>KSh ${totalPrice.toLocaleString()}</strong></li>
-                    <li><span class="step-n">5</span> Enter PIN and confirm</li>
-                </ul>
-                <button class="btn btn-gold" style="width:100%;padding:0.95rem;margin-top:1rem;" onclick="confirmManualPayment(${totalPrice}, ${totalQty})">
-                    I Have Paid – Generate Seat Number
-                </button>
-            `;
-        }
-
-        let pollInterval = null;
-
-        function pollPaymentStatus(checkoutRequestID, totalPrice, totalQty) {
-            let attempts = 0;
-            const maxAttempts = 40; // ~2 minutes
-
-            pollInterval = setInterval(async () => {
-                attempts++;
-                try {
-                    const res = await fetch(`${API_BASE}/api/mpesa/status/${checkoutRequestID}`);
-                    const data = await res.json();
-
-                    if (data.status === 'completed' && data.data) {
-                        clearInterval(pollInterval);
-                        showSuccessReceipt(data.data, totalPrice, totalQty);
-                    } else if (data.status === 'failed') {
-                        clearInterval(pollInterval);
-                        document.getElementById('stkStatus').innerHTML = `
-                            <span style="color:#ff6b81;">Payment failed or was cancelled. Please try again.</span>
-                        `;
-                        document.getElementById('stkBtn').style.display = 'block';
-                        document.getElementById('stkBtn').disabled = false;
-                    } else if (attempts >= maxAttempts) {
-                        clearInterval(pollInterval);
-                        document.getElementById('stkStatus').innerHTML = `
-                            <span style="color:#fbbf24;">Still waiting for confirmation. If you already paid, contact support with your M-Pesa message.</span>
-                        `;
-                    }
-                } catch (e) {
-                    console.error('Poll error', e);
-                }
-            }, 3000);
-        }
-
-        function showSuccessReceipt(paymentData, totalPrice, totalQty) {
-            const seats = paymentData.seats || [];
-            const seatDisplay = seats.join(', ');
-            const receiptRef = paymentData.receiptRef || ('ROI-' + Date.now().toString().slice(-8));
-
-            document.getElementById('modalTitle').textContent = 'Payment Successful ✓';
-            document.getElementById('modalBody').innerHTML = `
-                <div style="text-align:center;margin-bottom:1.25rem;">
-                    <div style="width:64px;height:64px;background:rgba(0,102,0,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:2rem;">✓</div>
-                    <p style="color:#4ade80;font-weight:600;font-size:1.1rem;">Payment received! Your seats have been assigned.</p>
-                </div>
-
-                <div class="receipt-box">
-                    <div class="seat-label">Your Assigned Seat Number${seats.length > 1 ? 's' : ''}</div>
-                    <div class="seat-number">${seatDisplay}</div>
-                    <div class="ref">Receipt Ref: ${receiptRef}</div>
-                    ${paymentData.mpesaReceipt ? `<div class="ref">M-Pesa Code: ${paymentData.mpesaReceipt}</div>` : ''}
-                </div>
-
-                <div style="margin-top:1.5rem;background:rgba(255,255,255,0.04);border-radius:10px;padding:1rem;font-size:0.9rem;">
-                    <div style="display:flex;justify-content:space-between;margin-bottom:0.4rem;">
-                        <span style="color:var(--text-muted);">Amount Paid</span>
-                        <span>KSh ${(paymentData.amount || totalPrice).toLocaleString()}</span>
-                    </div>
-                    <div style="display:flex;justify-content:space-between;margin-bottom:0.4rem;">
-                        <span style="color:var(--text-muted);">Tickets</span>
-                        <span>${totalQty}</span>
-                    </div>
-                    <div style="display:flex;justify-content:space-between;margin-bottom:0.4rem;">
-                        <span style="color:var(--text-muted);">Paybill</span>
-                        <span>542542</span>
-                    </div>
-                    <div style="display:flex;justify-content:space-between;">
-                        <span style="color:var(--text-muted);">Match</span>
-                        <span>Bayern vs Ajax • 5 Jan 2027</span>
-                    </div>
-                </div>
-
-                <p style="font-size:0.85rem;color:var(--text-muted);margin:1.25rem 0 0.75rem;text-align:center;">
-                    Please take a screenshot of this receipt. Present your Seat Number at the gate on match day.
-                </p>
-
-                <button class="btn btn-primary" style="width:100%;padding:0.9rem;" onclick="closePaymentModal(); cart = []; updateCartUI();">
-                    Done
-                </button>
-            `;
-        }
-
-        function closePaymentModal() {
-            if (pollInterval) clearInterval(pollInterval);
-            document.getElementById('paymentModal').classList.remove('show');
-        }
-
-        document.getElementById('paymentModal').addEventListener('click', function(e) {
-            if (e.target === this) closePaymentModal();
-        });
-
-        // Spinner animation
-        const style = document.createElement('style');
-        style.textContent = '@keyframes spin { to { transform: rotate(360deg); } }';
-        document.head.appendChild(style);
-
-        function toggleFaq(btn) {
-            const item = btn.parentElement;
-            const wasActive = item.classList.contains('active');
-            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-            if (!wasActive) item.classList.add('active');
-        }
-    </script>
+    renderTickets();
+  </script>
 </body>
 </html>
